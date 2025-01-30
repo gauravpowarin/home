@@ -9,7 +9,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding-top: 80px;
+            padding-top: 80px; /* Prevent content from hiding under the fixed header */
             background-color: #1a1a2e;
             color: #e0e0e0;
             text-align: center;
@@ -17,30 +17,23 @@
         header {
             background-color: #16213e;
             padding: 1rem 2rem;
+            text-align: center;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .menu-icon {
-            display: none;
-            font-size: 2rem;
-            cursor: pointer;
-        }
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
+            justify-content: center;
             gap: 20px;
+        }
+        nav ul li {
+            display: inline;
         }
         nav ul li a {
             color: #e0e0e0;
@@ -51,7 +44,19 @@
         nav ul li a:hover {
             color: #f4a261;
         }
-        .project-list, .media-gallery {
+        section {
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .project-list {
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -69,12 +74,25 @@
         .project-item:hover {
             transform: translateY(-5px);
         }
+        .media-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
         .media-gallery img {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
+            width: 200px;
+            height: 150px;
             border-radius: 10px;
             object-fit: cover;
+        }
+        .hobbies-list {
+            text-align: left;
+            display: inline-block;
+        }
+        .hobbies-list li {
+            margin: 8px 0;
         }
         footer {
             background-color: #16213e;
@@ -84,54 +102,37 @@
             width: 100%;
             margin-top: 50px;
         }
-        @media (max-width: 768px) {
-            .menu-icon {
-                display: block;
-            }
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: #16213e;
-                text-align: center;
-                padding: 10px 0;
-            }
-            nav ul.show {
-                display: flex;
-            }
-        }
     </style>
 </head>
 <body>
     <header>
-        <div class="nav-container">
-            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
-            <nav>
-                <ul id="menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#hobbies">Hobbies</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     
     <section id="home">
+        <img src="https://raw.githubusercontent.com/gauravpowarin/home/f8fd2c749d82ef29ed41dc700838cc84d1545169/IMG_9986.png" alt="Profile Picture" class="profile-image">
         <h1>Gaurav Powar</h1>
         <p>Research Student | Speaker | Content Creator</p>
     </section>
-    
+
     <section id="projects">
         <h2>Projects</h2>
         <div class="project-list">
             <div class="project-item">
-                <h3>RFID-Based Access Control System</h3>
-                <p>Secure access using RFID with Two-Factor Authentication.</p>
+                <h3>RFID-Based Access Control System with 2FA</h3>
+                <p>A secure access system combining <strong>RFID</strong> with <strong>Two-Factor Authentication (2FA)</strong> using biometrics like <strong>IRIS scan</strong>. Features <strong>real-time monitoring, encrypted communication, and role-based access control</strong>, ideal for high-security environments.</p>
+            </div>
+            <div class="project-item">
+                <h3>Project 2</h3>
+                <p>Description of the project.</p>
             </div>
         </div>
     </section>
@@ -139,24 +140,53 @@
     <section id="media">
         <h2>Media Gallery</h2>
         <div class="media-gallery">
-            <img src="media1.jpg" alt="Media 1">
+            <img src="https://photos.fife.usercontent.google.com/pw/AP1GczOX4db3Pdb9wTGJ7iB6Xiuo4kypQzGgAHAzOv9As2rLNlbxwAf0OKLx=w1415-h796-s-no-gm?authuser=0" alt="Media 1">
             <img src="media2.jpg" alt="Media 2">
+            <img src="media3.jpg" alt="Media 3">
         </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <p>Details about your work and leadership experiences.</p>
+    </section>
+
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <p>I have a deep passion for technology, science, and creativity. Here are some of my favorite pursuits:</p>
+        <ul class="hobbies-list">
+            <li><strong>Robotics:</strong> Exploring automation and building intelligent systems.</li>
+            <li><strong>Astronomy:</strong> Stargazing, understanding celestial phenomena, and space exploration.</li>
+            <li><strong>Music & Playlists:</strong> Listening to music and curating themed playlists.</li>
+            <li><strong>Gaming:</strong> Occasionally playing video games for fun and relaxation.</li>
+            <li><strong>IoT & Hardware:</strong> Tinkering with IoT devices and hardware projects.</li>
+            <li><strong>Quiz Competitions:</strong> Testing knowledge and competing in quizzes.</li>
+            <li><strong>MUNs:</strong> Participating in Model United Nations for debate and diplomacy.</li>
+        </ul>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
         <p>Email: gaurav.powar@tutamail.com</p>
+
+        <p>LinkedIn:</p>
+        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+        <div class="LI-profile-badge" 
+             data-version="v1" 
+             data-size="large" 
+             data-locale="en_US" 
+             data-type="horizontal" 
+             data-theme="dark" 
+             data-vanity="gauravpowarin">
+        </div>
+
+        <p>GitHub:</p>
+        <iframe src="https://github-readme-stats.vercel.app/api?username=GauravTheTechy&show_icons=true&theme=dark" 
+                width="600" height="200" frameborder="0"></iframe>
     </section>
 
     <footer>
         <p>&copy; 2025 Gaurav Powar. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            document.getElementById("menu").classList.toggle("show");
-        }
-    </script>
 </body>
 </html>
