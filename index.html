@@ -9,9 +9,10 @@
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding: 0;
+            padding-top: 80px; /* Prevent content from hiding under the fixed header */
             background-color: #1a1a2e;
             color: #e0e0e0;
+            text-align: center;
         }
         header {
             background-color: #16213e;
@@ -26,6 +27,7 @@
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -43,8 +45,9 @@
             color: #f4a261;
         }
         section {
-            padding: 5rem 2rem;
-            text-align: center;
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
         .profile-image {
             width: 150px;
@@ -63,6 +66,8 @@
             background-color: #0f3460;
             padding: 1.5rem;
             border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
         }
@@ -82,13 +87,20 @@
             border-radius: 10px;
             object-fit: cover;
         }
+        .hobbies-list {
+            text-align: left;
+            display: inline-block;
+        }
+        .hobbies-list li {
+            margin: 8px 0;
+        }
         footer {
             background-color: #16213e;
             color: white;
             text-align: center;
             padding: 1.5rem;
-            position: relative;
             width: 100%;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -114,14 +126,16 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="project-list">
-<div class="project-item">
-    <h3>RFID-Based Access Control System with 2FA</h3>
-    <p>A secure access system combining <strong>RFID</strong> with <strong>Two-Factor Authentication (2FA)</strong> using biometrics like <strong>IRIS scan</strong>. Features <strong>real-time monitoring, encrypted communication, and role-based access control</strong>, ideal for high-security environments.</p>
-</div>
-<div class="project-item">
-    <h3>Project 2</h3>
-    <p>Description of the project.</p>
-</div>
+            <div class="project-item">
+                <h3>RFID-Based Access Control System with 2FA</h3>
+                <p>A secure access system combining <strong>RFID</strong> with <strong>Two-Factor Authentication (2FA)</strong> using biometrics like <strong>IRIS scan</strong>. Features <strong>real-time monitoring, encrypted communication, and role-based access control</strong>, ideal for high-security environments.</p>
+            </div>
+            <div class="project-item">
+                <h3>Project 2</h3>
+                <p>Description of the project.</p>
+            </div>
+        </div>
+    </section>
 
     <section id="media">
         <h2>Media Gallery</h2>
@@ -137,25 +151,24 @@
         <p>Details about your work and leadership experiences.</p>
     </section>
 
-<section id="hobbies">
-    <h2>Hobbies</h2>
-    <p>I have a deep passion for technology, science, and creativity. Here are some of my favorite pursuits:</p>
-    <ul>
-        <li><strong>Robotics:</strong> Exploring automation and building intelligent systems.</li>
-        <li><strong>Astronomy:</strong> Stargazing, understanding celestial phenomena, and space exploration.</li>
-        <li><strong>Music & Playlists:</strong> Listening to music and curating themed playlists.</li>
-        <li><strong>Gaming:</strong> Occasionally playing video games for fun and relaxation.</li>
-        <li><strong>IoT & Hardware:</strong> Tinkering with IoT devices and hardware projects.</li>
-        <li><strong>Quiz Competitions:</strong> Testing knowledge and competing in quizzes.</li>
-        <li><strong>MUNs:</strong> Participating in Model United Nations for debate and diplomacy.</li>
-    </ul>
-</section>
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <p>I have a deep passion for technology, science, and creativity. Here are some of my favorite pursuits:</p>
+        <ul class="hobbies-list">
+            <li><strong>Robotics:</strong> Exploring automation and building intelligent systems.</li>
+            <li><strong>Astronomy:</strong> Stargazing, understanding celestial phenomena, and space exploration.</li>
+            <li><strong>Music & Playlists:</strong> Listening to music and curating themed playlists.</li>
+            <li><strong>Gaming:</strong> Occasionally playing video games for fun and relaxation.</li>
+            <li><strong>IoT & Hardware:</strong> Tinkering with IoT devices and hardware projects.</li>
+            <li><strong>Quiz Competitions:</strong> Testing knowledge and competing in quizzes.</li>
+            <li><strong>MUNs:</strong> Participating in Model United Nations for debate and diplomacy.</li>
+        </ul>
+    </section>
 
     <section id="contact">
         <h2>Contact</h2>
         <p>Email: gaurav.powar@tutamail.com</p>
 
-        <!-- LinkedIn Profile Badge -->
         <p>LinkedIn:</p>
         <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
         <div class="LI-profile-badge" 
@@ -167,7 +180,6 @@
              data-vanity="gauravpowarin">
         </div>
 
-        <!-- GitHub Profile Stats -->
         <p>GitHub:</p>
         <iframe src="https://github-readme-stats.vercel.app/api?username=GauravTheTechy&show_icons=true&theme=dark" 
                 width="600" height="200" frameborder="0"></iframe>
