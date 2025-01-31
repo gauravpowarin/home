@@ -60,13 +60,13 @@
             display: flex;
             justify-content: space-between;
             gap: 20px;
-            flex-wrap: wrap;
+            flex-wrap: no-wrap; /* Prevent wrapping of items */
         }
         .project-item {
             background-color: #0f3460;
             padding: 1.5rem;
             border-radius: 10px;
-            width: 48%; /* Adjust width to fit two items side by side */
+            width: 48%; /* Ensures two items can fit side-by-side */
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
         }
